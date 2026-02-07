@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寶可夢卡牌日本賽事統計 - Pokemon TCG JP Stats</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .info {
+            font-size: 1.2em;
+            margin: 20px 0;
+            opacity: 0.9;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .link {
+            margin-top: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.1em;
+        }
+    </style>
+    <script>
+        // Redirect to latest version after 1 second
+        setTimeout(function() {
+            window.location.href = '20260207/index.html';
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎴 寶可夢卡牌日本賽事統計</h1>
+        <div class="info">Pokemon TCG Japan Tournament Statistics</div>
+        <div class="spinner"></div>
+        <div class="info">正在載入最新資料...</div>
+        <div class="info" style="font-size: 0.9em;">
+            最新版本: 2026-02-07<br>
+            15 場比賽 · 120 個牌組
+        </div>
+        <div class="link">
+            <a href="20260207/index.html">點此立即進入</a> |
+            <a href="archive.html">查看歷史版本</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巨魔雪妖女 - 牌組列表</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Mobile First */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 25px; border-radius: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 30px; }
+        }
+        
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 28px; margin-bottom: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 32px; }
+        }
+        
+        .stats {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            .stats { font-size: 15px; margin-bottom: 25px; }
+        }
+        
+        .deck-list {
+            display: grid;
+            gap: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            .deck-list { gap: 15px; }
+        }
+        
+        .deck-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .deck-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .deck-card { padding: 18px; }
+        }
+        
+        .deck-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .player-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (min-width: 768px) {
+            .player-name { font-size: 18px; }
+        }
+        
+        .rank-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        @media (min-width: 768px) {
+            .rank-badge { font-size: 14px; padding: 5px 15px; }
+        }
+        
+        .rank-badge.top3 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .deck-info {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 768px) {
+            .deck-info { font-size: 14px; }
+        }
+        
+        .deck-info strong {
+            color: #333;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .pagination { gap: 10px; margin-top: 30px; }
+        }
+        
+        .pagination a, .pagination span {
+            padding: 8px 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #667eea;
+            background: white;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        @media (min-width: 768px) {
+            .pagination a, .pagination span {
+                padding: 8px 16px;
+                font-size: 15px;
+            }
+        }
+        
+        .pagination a:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .pagination .current {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            font-weight: 600;
+        }
+        
+        .pagination .disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            border-color: #eee;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">← 返回分類總覽</a>
+        </div>
+        
+        <h1>巨魔雪妖女</h1>
+        <p class="stats">共 54 副牌組</p>
+        
+        
+        <div class="deck-list">
+            
+            <a href="../../deck/153.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ハルリン</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>神奈川県</div>
+                    
+                    <div><strong>日期：</strong>2026年02月01日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/139.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">よしあき</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>香川県</div>
+                    
+                    <div><strong>日期：</strong>2026年02月01日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/106.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ぴよ</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>茨城県</div>
+                    
+                    <div><strong>日期：</strong>2026年02月01日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/45.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ぽんきち</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年02月01日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/723.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">タナッキー</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>山口県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/702.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">リュウジ</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>香川県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/690.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ヒロ</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/645.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">まひろ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>宮城県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/640.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ひさたか</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>宮城県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/631.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">けんや</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>広島県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/630.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ちー</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>広島県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/626.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">タコピー</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>沖縄県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/616.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">マユ</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/615.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ユイーカ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/613.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">てっぺい</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/597.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">つよ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/560.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">sai_</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>大阪府</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/559.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">はまつー</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>北海道</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/546.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">あんのうん</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>静岡県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/545.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">トッキー</span>
+                    <span class="rank-badge top3">
+                        🥈
+                        第 2 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>静岡県</div>
+                    
+                    <div><strong>日期：</strong>2026年01月31日</div>
+                    
+                </div>
+            </a>
+            
+        </div>
+        
+        
+        <div class="pagination">
+            
+            <a href="page1.html">上一頁</a>
+            
+            
+            <span class="current">第 2 / 3 頁</span>
+            
+            
+            <a href="page3.html">下一頁</a>
+            
+        </div>
+        
+        
+        
+    </div>
+</body>
+</html>

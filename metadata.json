@@ -1,0 +1,20 @@
+{
+  "versions": [
+    {
+      "version": "20260207",
+      "date_label": "2026-02-07",
+      "range_label": "本週六",
+      "generated_at": "2026-02-07T18:25:58.331654+09:00",
+      "tournament_count": 15,
+      "deck_count": 120
+    },
+    {
+      "version": "20260131-20260201",
+      "date_label": "2026-01-31 ~ 2026-02-01",
+      "range_label": "上週末",
+      "generated_at": "2026-02-07T14:02:38.480984+09:00",
+      "tournament_count": 93,
+      "deck_count": 680
+    }
+  ]
+}

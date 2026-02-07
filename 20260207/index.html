@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牌組分類 - Pokemon TCG</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Mobile First */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 25px; border-radius: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 30px; }
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 28px; margin-bottom: 8px; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 32px; margin-bottom: 10px; }
+        }
+        
+        .date-range {
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .date-range { font-size: 13px; margin-bottom: 20px; }
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            .subtitle { font-size: 15px; margin-bottom: 25px; }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        
+        .nav-btn:hover {
+            background: #5568d3;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-btn { padding: 8px 16px; font-size: 14px; }
+        }
+        
+        .archetype-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        @media (min-width: 480px) {
+            .archetype-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .archetype-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .archetype-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .archetype-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ebff 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+        
+        .archetype-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        
+        .archetype-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        @media (min-width: 768px) {
+            .archetype-name { font-size: 17px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .archetype-name { font-size: 16px; }
+        }
+        
+        .archetype-count {
+            font-size: 28px;
+            font-weight: bold;
+            color: #764ba2;
+        }
+        
+        @media (min-width: 768px) {
+            .archetype-count { font-size: 26px; }
+        }
+        
+        .archetype-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .empty-message { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎴 牌組分類總覽</h1>
+        <div class="date-range">📅 數據時間：2026-02-07 ~ 2026-02-07</div>
+        <p class="subtitle">點擊查看各分類的牌組構築</p>
+        
+        <div class="nav-links">
+            <a href="tournaments.html" class="nav-btn">📅 比賽列表</a>
+            <a href="statistics.html" class="nav-btn">📊 數據統計</a>
+            
+            <a href="../archive.html" class="nav-btn">📚 歷史版本</a>
+            
+        </div>
+        
+        
+        <div class="archetype-grid">
+            
+            <a href="archetype/多龍魔靈/index.html" class="archetype-card">
+                <div class="archetype-name">多龍魔靈</div>
+                <div class="archetype-count">22</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/路卡/index.html" class="archetype-card">
+                <div class="archetype-name">路卡</div>
+                <div class="archetype-count">18</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/多龍/index.html" class="archetype-card">
+                <div class="archetype-name">多龍</div>
+                <div class="archetype-count">12</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/巨魔雪妖女/index.html" class="archetype-card">
+                <div class="archetype-name">巨魔雪妖女</div>
+                <div class="archetype-count">10</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/火箭隊的烏鴉頭頭/index.html" class="archetype-card">
+                <div class="archetype-name">火箭隊的烏鴉頭頭</div>
+                <div class="archetype-count">7</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/胡地/index.html" class="archetype-card">
+                <div class="archetype-name">胡地</div>
+                <div class="archetype-count">6</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級蒂安希ex/index.html" class="archetype-card">
+                <div class="archetype-name">超級蒂安希ex</div>
+                <div class="archetype-count">5</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/太晶伊布/index.html" class="archetype-card">
+                <div class="archetype-name">太晶伊布</div>
+                <div class="archetype-count">4</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/巨金怪/index.html" class="archetype-card">
+                <div class="archetype-name">巨金怪</div>
+                <div class="archetype-count">4</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/祭典/index.html" class="archetype-card">
+                <div class="archetype-name">祭典</div>
+                <div class="archetype-count">3</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/多龍太晶/index.html" class="archetype-card">
+                <div class="archetype-name">多龍太晶</div>
+                <div class="archetype-count">3</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級妙蛙花/index.html" class="archetype-card">
+                <div class="archetype-name">超級妙蛙花</div>
+                <div class="archetype-count">3</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級蒂安希/index.html" class="archetype-card">
+                <div class="archetype-name">超級蒂安希</div>
+                <div class="archetype-count">3</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/赫普牌組/index.html" class="archetype-card">
+                <div class="archetype-name">赫普牌組</div>
+                <div class="archetype-count">2</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/草椪/index.html" class="archetype-card">
+                <div class="archetype-name">草椪</div>
+                <div class="archetype-count">2</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/烈咬陸鯊/index.html" class="archetype-card">
+                <div class="archetype-name">烈咬陸鯊</div>
+                <div class="archetype-count">2</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/火箭隊的超夢/index.html" class="archetype-card">
+                <div class="archetype-name">火箭隊的超夢</div>
+                <div class="archetype-count">2</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/妙蛙花大竺葵/index.html" class="archetype-card">
+                <div class="archetype-name">妙蛙花大竺葵</div>
+                <div class="archetype-count">2</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/海星雪妖女/index.html" class="archetype-card">
+                <div class="archetype-name">海星雪妖女</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級沙奈朵ex/index.html" class="archetype-card">
+                <div class="archetype-name">超級沙奈朵ex</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/甲賀忍蛙/index.html" class="archetype-card">
+                <div class="archetype-name">甲賀忍蛙</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/顫弦蠑螈/index.html" class="archetype-card">
+                <div class="archetype-name">顫弦蠑螈</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/厄鬼面具/index.html" class="archetype-card">
+                <div class="archetype-name">厄鬼面具</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/夠讚狗/index.html" class="archetype-card">
+                <div class="archetype-name">夠讚狗</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/巨魔梗鬼/index.html" class="archetype-card">
+                <div class="archetype-name">巨魔梗鬼</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/鋁鋼橋龍/index.html" class="archetype-card">
+                <div class="archetype-name">鋁鋼橋龍</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級大竺葵/index.html" class="archetype-card">
+                <div class="archetype-name">超級大竺葵</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+            <a href="archetype/超級雪妖女/index.html" class="archetype-card">
+                <div class="archetype-name">超級雪妖女</div>
+                <div class="archetype-count">1</div>
+                <div class="archetype-label">副牌組</div>
+            </a>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
