@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牌組構築 - </title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 25px; border-radius: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 30px; }
+        }
+        
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 28px; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 32px; }
+        }
+        
+        .deck-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .deck-header p {
+            margin: 8px 0;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        @media (min-width: 768px) {
+            .deck-header { padding: 20px; margin-bottom: 25px; }
+            .deck-header p { font-size: 16px; }
+        }
+        
+        .deck-thumbnail {
+            margin: 20px 0;
+            text-align: center;
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .deck-thumbnail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .deck-thumbnail p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .deck-thumbnail a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .deck-thumbnail a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card:nth-child(1) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .summary-card:nth-child(2) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .summary-card:nth-child(3) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .summary-card h3 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+        .summary-card .count {
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        .card-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        .section-title h2 {
+            color: #667eea;
+            font-size: 18px;
+        }
+        .section-total {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title h2 { font-size: 20px; }
+            .section-total { font-size: 15px; padding: 5px 15px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title h2 { font-size: 22px; }
+        }
+        
+        .card-list {
+            list-style: none;
+        }
+        .card-item {
+            padding: 12px;
+            margin-bottom: 5px;
+            background: #f8f9ff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        .card-item:hover {
+            background: #e8e9ff;
+            transform: translateX(5px);
+        }
+        .card-name {
+            font-weight: 500;
+            color: #333;
+        }
+        .card-name.no-translation {
+            color: #999;
+            font-style: italic;
+        }
+        .search-link {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 8px;
+            text-decoration: none;
+            color: #667eea;
+            opacity: 0.6;
+            transition: opacity 0.2s, color 0.2s;
+            vertical-align: middle;
+        }
+        .search-link:hover {
+            opacity: 1;
+            color: #5568d3;
+        }
+        .search-link svg {
+            width: 14px;
+            height: 14px;
+        }
+        @media (min-width: 768px) {
+            .search-link svg { width: 13px; height: 13px; }
+        }
+        .card-quantity {
+            background: #667eea;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL5B34CCXE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QL5B34CCXE');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-btn">← 返回首頁</a>
+        
+        <div class="breadcrumb">
+            <a href="../index.html">首頁</a> / 牌組構築詳情
+        </div>
+        
+        <div class="deck-header">
+            <h1>🎴 牌組構築</h1>
+            <p><strong>牌組類型：</strong>
+            
+            <a href="../archetype/多龍魔靈/index.html" style="color: white; text-decoration: underline;">多龍魔靈</a>
+            
+            </p>
+            <p><strong>在比賽中出現次數：</strong>1 次</p>
+        </div>
+        
+        <!-- Tournament Appearances Section -->
+        <div class="card-section">
+            <div class="section-title">
+                <h2>📊 比賽記錄</h2>
+                <span class="section-total">1</span>
+            </div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                    <thead style="background: #667eea; color: white;">
+                        <tr>
+                            <th style="padding: 12px; text-align: left;">比賽名稱</th>
+                            <th style="padding: 12px; text-align: left;">日期</th>
+                            <th style="padding: 12px; text-align: left;">玩家</th>
+                            <th style="padding: 12px; text-align: center;">名次</th>
+                            <th style="padding: 12px; text-align: center;">積分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr style="border-bottom: 1px solid #e0e0e0; ">
+                            <td style="padding: 12px;">
+                                <a href="../tournament/188.html" style="color: #667eea; text-decoration: none;">
+                                    茨城県
+                                </a>
+                            </td>
+                            <td style="padding: 12px; white-space: nowrap;">2026-02-07</td>
+                            <td style="padding: 12px;">めろ</td>
+                            <td style="padding: 12px; text-align: center;">
+                                <strong style="color: #C0C0C0;">
+                                    第 2 名
+                                </strong>
+                            </td>
+                            <td style="padding: 12px; text-align: center;">75pt</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="deck-thumbnail">
+            <img src="https://www.pokemon-card.com/deck/deckView.php/deckID/yyppEp-Ojdh70-Rp2yEy.png" 
+                 alt="牌組構築圖" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22800%22 height=%22400%22/%3E%3Ctext fill=%22%23999%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22sans-serif%22 font-size=%2224%22%3E無法載入牌組圖片%3C/text%3E%3C/svg%3E';">
+            <p>
+                <a href="https://www.pokemon-card.com/deck/confirm.html/deckID/yyppEp-Ojdh70-Rp2yEy" target="_blank">📋 在官網查看完整構築</a>
+            </p>
+        </div>
+        
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>寶可夢</h3>
+                <div class="count">23</div>
+            </div>
+            <div class="summary-card">
+                <h3>訓練家</h3>
+                <div class="count">30</div>
+            </div>
+            <div class="summary-card">
+                <h3>能量</h3>
+                <div class="count">7</div>
+            </div>
+        </div>
+        
+        
+        <div class="card-section">
+            <div class="section-title">
+                <h2>🐾 寶可夢卡</h2>
+                <span class="section-total">23 張</span>
+            </div>
+            <ul class="card-list">
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        吉雉雞ex
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        彷徨夜靈
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        謝米
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        含羞苞
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        多龍巴魯托ex
+                        
+                    </span>
+                    <span class="card-quantity">× 3</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        多龍梅西亞
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        多龍奇
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        喵喵ex
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        願增猿
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        黑夜魔靈
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        夜巡靈
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        拉帝亞斯ex
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+            </ul>
+        </div>
+        
+        
+        
+        <div class="card-section">
+            <div class="section-title">
+                <h2>🎒 訓練家卡</h2>
+                <span class="section-total">30 張</span>
+            </div>
+            <ul class="card-list">
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        赤松
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        不公印章
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        干擾塔
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        好友寶芬
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        高級球
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        小光
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        神奇糖果
+                        
+                    </span>
+                    <span class="card-quantity">× 3</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        寶可平板
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        老大的指令
+                        
+                    </span>
+                    <span class="card-quantity">× 3</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        莉莉艾的決心
+                        
+                    </span>
+                    <span class="card-quantity">× 4</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        夜間擔架
+                        
+                    </span>
+                    <span class="card-quantity">× 2</span>
+                </li>
+                
+            </ul>
+        </div>
+        
+        
+        
+        <div class="card-section">
+            <div class="section-title">
+                <h2>⚡ 能量卡</h2>
+                <span class="section-total">7 張</span>
+            </div>
+            <ul class="card-list">
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        基本惡能量
+                        
+                    </span>
+                    <span class="card-quantity">× 1</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        基本火能量
+                        
+                    </span>
+                    <span class="card-quantity">× 3</span>
+                </li>
+                
+                <li class="card-item">
+                    <span class="card-name ">
+                        基本超能量
+                        
+                    </span>
+                    <span class="card-quantity">× 3</span>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
