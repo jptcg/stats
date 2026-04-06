@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比賽列表 - Pokemon TCG</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 30px;
+        }
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .stats {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f8f9ff;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL5B34CCXE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QL5B34CCXE');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">← 返回首頁</a>
+            
+            | <a href="../archive.html">📚 歷史版本</a>
+            
+        </div>
+        <h1>🎴 比賽列表</h1>
+        <p class="stats">
+            共 72 場比賽 | 
+            <a href="statistics.html" style="color: #667eea;">📊 數據統計</a>
+        </p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 60px;">ID</th>
+                    <th>比賽名稱</th>
+                    <th style="width: 120px;">日期</th>
+                    <th style="width: 100px; text-align: center;">牌組數</th>
+                    <th style="width: 150px;">爬取時間</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>722</td>
+                    <td>
+                        <a href="tournament/722.html">沖縄県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:50</td>
+                </tr>
+                
+                <tr>
+                    <td>713</td>
+                    <td>
+                        <a href="tournament/713.html">京都府</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:43</td>
+                </tr>
+                
+                <tr>
+                    <td>714</td>
+                    <td>
+                        <a href="tournament/714.html">長野県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:44</td>
+                </tr>
+                
+                <tr>
+                    <td>715</td>
+                    <td>
+                        <a href="tournament/715.html">北海道</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:45</td>
+                </tr>
+                
+                <tr>
+                    <td>716</td>
+                    <td>
+                        <a href="tournament/716.html">千葉県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:46</td>
+                </tr>
+                
+                <tr>
+                    <td>717</td>
+                    <td>
+                        <a href="tournament/717.html">千葉県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:46</td>
+                </tr>
+                
+                <tr>
+                    <td>718</td>
+                    <td>
+                        <a href="tournament/718.html">福井県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:47</td>
+                </tr>
+                
+                <tr>
+                    <td>719</td>
+                    <td>
+                        <a href="tournament/719.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:48</td>
+                </tr>
+                
+                <tr>
+                    <td>720</td>
+                    <td>
+                        <a href="tournament/720.html">滋賀県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:49</td>
+                </tr>
+                
+                <tr>
+                    <td>721</td>
+                    <td>
+                        <a href="tournament/721.html">高知県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:50</td>
+                </tr>
+                
+                <tr>
+                    <td>693</td>
+                    <td>
+                        <a href="tournament/693.html">山形県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:27</td>
+                </tr>
+                
+                <tr>
+                    <td>723</td>
+                    <td>
+                        <a href="tournament/723.html">長崎県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:51</td>
+                </tr>
+                
+                <tr>
+                    <td>724</td>
+                    <td>
+                        <a href="tournament/724.html">岡山県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:52</td>
+                </tr>
+                
+                <tr>
+                    <td>725</td>
+                    <td>
+                        <a href="tournament/725.html">山口県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:53</td>
+                </tr>
+                
+                <tr>
+                    <td>726</td>
+                    <td>
+                        <a href="tournament/726.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:54</td>
+                </tr>
+                
+                <tr>
+                    <td>727</td>
+                    <td>
+                        <a href="tournament/727.html">宮城県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:55</td>
+                </tr>
+                
+                <tr>
+                    <td>728</td>
+                    <td>
+                        <a href="tournament/728.html">大阪府</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:55</td>
+                </tr>
+                
+                <tr>
+                    <td>729</td>
+                    <td>
+                        <a href="tournament/729.html">大阪府</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:56</td>
+                </tr>
+                
+                <tr>
+                    <td>730</td>
+                    <td>
+                        <a href="tournament/730.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:57</td>
+                </tr>
+                
+                <tr>
+                    <td>731</td>
+                    <td>
+                        <a href="tournament/731.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:58</td>
+                </tr>
+                
+                <tr>
+                    <td>711</td>
+                    <td>
+                        <a href="tournament/711.html">福岡県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:41</td>
+                </tr>
+                
+                <tr>
+                    <td>712</td>
+                    <td>
+                        <a href="tournament/712.html">福岡県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:42</td>
+                </tr>
+                
+                <tr>
+                    <td>692</td>
+                    <td>
+                        <a href="tournament/692.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:26</td>
+                </tr>
+                
+                <tr>
+                    <td>694</td>
+                    <td>
+                        <a href="tournament/694.html">秋田県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:28</td>
+                </tr>
+                
+                <tr>
+                    <td>695</td>
+                    <td>
+                        <a href="tournament/695.html">千葉県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:29</td>
+                </tr>
+                
+                <tr>
+                    <td>696</td>
+                    <td>
+                        <a href="tournament/696.html">埼玉県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:29</td>
+                </tr>
+                
+                <tr>
+                    <td>697</td>
+                    <td>
+                        <a href="tournament/697.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:30</td>
+                </tr>
+                
+                <tr>
+                    <td>698</td>
+                    <td>
+                        <a href="tournament/698.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:31</td>
+                </tr>
+                
+                <tr>
+                    <td>699</td>
+                    <td>
+                        <a href="tournament/699.html">北海道</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:32</td>
+                </tr>
+                
+                <tr>
+                    <td>700</td>
+                    <td>
+                        <a href="tournament/700.html">茨城県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:33</td>
+                </tr>
+                
+                <tr>
+                    <td>701</td>
+                    <td>
+                        <a href="tournament/701.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:33</td>
+                </tr>
+                
+                <tr>
+                    <td>703</td>
+                    <td>
+                        <a href="tournament/703.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:35</td>
+                </tr>
+                
+                <tr>
+                    <td>704</td>
+                    <td>
+                        <a href="tournament/704.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:36</td>
+                </tr>
+                
+                <tr>
+                    <td>705</td>
+                    <td>
+                        <a href="tournament/705.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:37</td>
+                </tr>
+                
+                <tr>
+                    <td>706</td>
+                    <td>
+                        <a href="tournament/706.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:37</td>
+                </tr>
+                
+                <tr>
+                    <td>707</td>
+                    <td>
+                        <a href="tournament/707.html">三重県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:38</td>
+                </tr>
+                
+                <tr>
+                    <td>708</td>
+                    <td>
+                        <a href="tournament/708.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:39</td>
+                </tr>
+                
+                <tr>
+                    <td>709</td>
+                    <td>
+                        <a href="tournament/709.html">大阪府</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:40</td>
+                </tr>
+                
+                <tr>
+                    <td>710</td>
+                    <td>
+                        <a href="tournament/710.html">大阪府</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:41</td>
+                </tr>
+                
+                <tr>
+                    <td>702</td>
+                    <td>
+                        <a href="tournament/702.html">鹿児島県</a>
+                    </td>
+                    <td class="date">2026-04-05</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:34</td>
+                </tr>
+                
+                <tr>
+                    <td>748</td>
+                    <td>
+                        <a href="tournament/748.html">北海道</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:12</td>
+                </tr>
+                
+                <tr>
+                    <td>749</td>
+                    <td>
+                        <a href="tournament/749.html">宮城県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:13</td>
+                </tr>
+                
+                <tr>
+                    <td>750</td>
+                    <td>
+                        <a href="tournament/750.html">宮城県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:14</td>
+                </tr>
+                
+                <tr>
+                    <td>751</td>
+                    <td>
+                        <a href="tournament/751.html">茨城県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:14</td>
+                </tr>
+                
+                <tr>
+                    <td>752</td>
+                    <td>
+                        <a href="tournament/752.html">石川県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:16</td>
+                </tr>
+                
+                <tr>
+                    <td>753</td>
+                    <td>
+                        <a href="tournament/753.html">長野県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:16</td>
+                </tr>
+                
+                <tr>
+                    <td>754</td>
+                    <td>
+                        <a href="tournament/754.html">大阪府</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:17</td>
+                </tr>
+                
+                <tr>
+                    <td>755</td>
+                    <td>
+                        <a href="tournament/755.html">静岡県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:18</td>
+                </tr>
+                
+                <tr>
+                    <td>738</td>
+                    <td>
+                        <a href="tournament/738.html">埼玉県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:04</td>
+                </tr>
+                
+                <tr>
+                    <td>756</td>
+                    <td>
+                        <a href="tournament/756.html">岐阜県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:19</td>
+                </tr>
+                
+                <tr>
+                    <td>757</td>
+                    <td>
+                        <a href="tournament/757.html">福岡県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:19</td>
+                </tr>
+                
+                <tr>
+                    <td>758</td>
+                    <td>
+                        <a href="tournament/758.html">秋田県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:20</td>
+                </tr>
+                
+                <tr>
+                    <td>759</td>
+                    <td>
+                        <a href="tournament/759.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:21</td>
+                </tr>
+                
+                <tr>
+                    <td>760</td>
+                    <td>
+                        <a href="tournament/760.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:22</td>
+                </tr>
+                
+                <tr>
+                    <td>761</td>
+                    <td>
+                        <a href="tournament/761.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:23</td>
+                </tr>
+                
+                <tr>
+                    <td>746</td>
+                    <td>
+                        <a href="tournament/746.html">奈良県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:10</td>
+                </tr>
+                
+                <tr>
+                    <td>732</td>
+                    <td>
+                        <a href="tournament/732.html">宮崎県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 01:59</td>
+                </tr>
+                
+                <tr>
+                    <td>733</td>
+                    <td>
+                        <a href="tournament/733.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:00</td>
+                </tr>
+                
+                <tr>
+                    <td>734</td>
+                    <td>
+                        <a href="tournament/734.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:00</td>
+                </tr>
+                
+                <tr>
+                    <td>735</td>
+                    <td>
+                        <a href="tournament/735.html">千葉県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:01</td>
+                </tr>
+                
+                <tr>
+                    <td>736</td>
+                    <td>
+                        <a href="tournament/736.html">茨城県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:02</td>
+                </tr>
+                
+                <tr>
+                    <td>737</td>
+                    <td>
+                        <a href="tournament/737.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:03</td>
+                </tr>
+                
+                <tr>
+                    <td>739</td>
+                    <td>
+                        <a href="tournament/739.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:04</td>
+                </tr>
+                
+                <tr>
+                    <td>740</td>
+                    <td>
+                        <a href="tournament/740.html">千葉県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:05</td>
+                </tr>
+                
+                <tr>
+                    <td>741</td>
+                    <td>
+                        <a href="tournament/741.html">神奈川県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:06</td>
+                </tr>
+                
+                <tr>
+                    <td>742</td>
+                    <td>
+                        <a href="tournament/742.html">鳥取県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:07</td>
+                </tr>
+                
+                <tr>
+                    <td>743</td>
+                    <td>
+                        <a href="tournament/743.html">愛知県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:08</td>
+                </tr>
+                
+                <tr>
+                    <td>744</td>
+                    <td>
+                        <a href="tournament/744.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:09</td>
+                </tr>
+                
+                <tr>
+                    <td>745</td>
+                    <td>
+                        <a href="tournament/745.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:09</td>
+                </tr>
+                
+                <tr>
+                    <td>747</td>
+                    <td>
+                        <a href="tournament/747.html">奈良県</a>
+                    </td>
+                    <td class="date">2026-04-04</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:11</td>
+                </tr>
+                
+                <tr>
+                    <td>762</td>
+                    <td>
+                        <a href="tournament/762.html">東京都</a>
+                    </td>
+                    <td class="date">2026-04-03</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:24</td>
+                </tr>
+                
+                <tr>
+                    <td>763</td>
+                    <td>
+                        <a href="tournament/763.html">埼玉県</a>
+                    </td>
+                    <td class="date">2026-04-03</td>
+                    <td style="text-align: center;">
+                        <span class="badge">8</span>
+                    </td>
+                    <td class="date">2026-04-06 02:25</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
