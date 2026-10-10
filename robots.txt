@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jptcg.github.io/stats/sitemap.xml

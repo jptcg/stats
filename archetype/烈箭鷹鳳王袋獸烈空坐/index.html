@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烈箭鷹鳳王袋獸烈空坐 - 牌組列表</title>
+    <meta name="description" content="烈箭鷹鳳王袋獸烈空坐 牌組列表，共 28 副牌組構築（第 1/2 頁）">
+    <link rel="canonical" href="https://jptcg.github.io/stats/archetype/%E7%83%88%E7%AE%AD%E9%B7%B9%E9%B3%B3%E7%8E%8B%E8%A2%8B%E7%8D%B8%E7%83%88%E7%A9%BA%E5%9D%90/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Mobile First */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 25px; border-radius: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 30px; }
+        }
+        
+        .breadcrumb {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 28px; margin-bottom: 10px; }
+        }
+        
+        @media (min-width: 1024px) {
+            h1 { font-size: 32px; }
+        }
+        
+        .stats {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            .stats { font-size: 15px; margin-bottom: 25px; }
+        }
+        
+        .deck-list {
+            display: grid;
+            gap: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            .deck-list { gap: 15px; }
+        }
+        
+        .deck-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .deck-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .deck-card { padding: 18px; }
+        }
+        
+        .deck-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .player-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (min-width: 768px) {
+            .player-name { font-size: 18px; }
+        }
+        
+        .rank-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        @media (min-width: 768px) {
+            .rank-badge { font-size: 14px; padding: 5px 15px; }
+        }
+        
+        .rank-badge.top3 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .deck-info {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 768px) {
+            .deck-info { font-size: 14px; }
+        }
+        
+        .deck-info strong {
+            color: #333;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .pagination { gap: 10px; margin-top: 30px; }
+        }
+        
+        .pagination a, .pagination span {
+            padding: 8px 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #667eea;
+            background: white;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        @media (min-width: 768px) {
+            .pagination a, .pagination span {
+                padding: 8px 16px;
+                font-size: 15px;
+            }
+        }
+        
+        .pagination a:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .pagination .current {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            font-weight: 600;
+        }
+        
+        .pagination .disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            border-color: #eee;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 16px;
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL5B34CCXE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QL5B34CCXE');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../../index.html">← 返回分類總覽</a>
+        </div>
+        
+        <h1>烈箭鷹鳳王袋獸烈空坐</h1>
+        <p class="stats">共 28 副牌組</p>
+        
+        
+        <div class="deck-list">
+            
+            <a href="../../deck/8485.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ねこ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>長野県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8471.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ハルオーガ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>神奈川県 2027年第1賽季城市聯賽（青年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8454.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">しゅん</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>宮崎県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8421.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">たける</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>広島県 2027年第1賽季城市聯賽（青年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8403.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">SOTA</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>福岡県 2027年第1賽季城市聯賽（青年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8293.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ルリ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>愛知県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8283.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">たねぱぱ</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>滋賀県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8274.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">うすしお</span>
+                    <span class="rank-badge top3">
+                        🥈
+                        第 2 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>沖縄県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8272.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">けい</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>熊本県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8230.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">player2</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>千葉県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8220.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">VEZEL</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>千葉県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8214.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ネギ</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>福島県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月04日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8159.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">蒼響</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>岩手県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8158.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">むねちゃん</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>岩手県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8123.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ゆう</span>
+                    <span class="rank-badge top3">
+                        🥇
+                        第 1 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>神奈川県 2027年第1賽季城市聯賽（少年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8113.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ソフー</span>
+                    <span class="rank-badge ">
+                        
+                        第 5 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>神奈川県 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8093.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">たなとす</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8085.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">ちこぼ</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>東京都 2027年第1賽季城市聯賽（公開組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8073.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">けい</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>福岡県 2027年第1賽季城市聯賽（少年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+            <a href="../../deck/8070.html" class="deck-card">
+                <div class="deck-header">
+                    <span class="player-name">かふう</span>
+                    <span class="rank-badge top3">
+                        🥉
+                        第 3 名
+                    </span>
+                </div>
+                <div class="deck-info">
+                    <div><strong>比賽：</strong>沖縄県 2027年第1賽季城市聯賽（少年組）</div>
+                    
+                    <div><strong>日期：</strong>2026年10月03日</div>
+                    
+                </div>
+            </a>
+            
+        </div>
+        
+        
+        <div class="pagination">
+            
+            <span class="disabled">上一頁</span>
+            
+            
+            <span class="current">第 1 / 2 頁</span>
+            
+            
+            <a href="page2.html">下一頁</a>
+            
+        </div>
+        
+        
+        
+    </div>
+</body>
+</html>
