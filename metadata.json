@@ -3,16 +3,16 @@
     {
       "version": "20261009-20261011",
       "date_label": "2026-10-09 ~ 2026-10-11",
-      "range_label": "自訂範圍",
-      "generated_at": "2026-10-10T23:20:25.190783+09:00",
+      "range_label": "本週末",
+      "generated_at": "2026-10-10T23:32:46.070503+09:00",
       "tournament_count": 27,
       "deck_count": 412
     },
     {
       "version": "20261002-20261004",
       "date_label": "2026-10-02 ~ 2026-10-04",
-      "range_label": "自訂範圍",
-      "generated_at": "2026-10-10T23:20:07.257543+09:00",
+      "range_label": "上週末",
+      "generated_at": "2026-10-10T23:32:27.997868+09:00",
       "tournament_count": 102,
       "deck_count": 758
     },
@@ -20,7 +20,7 @@
       "version": "20260925-20260927",
       "date_label": "2026-09-25 ~ 2026-09-27",
       "range_label": "自訂範圍",
-      "generated_at": "2026-10-10T23:19:36.580911+09:00",
+      "generated_at": "2026-10-10T23:31:47.545578+09:00",
       "tournament_count": 42,
       "deck_count": 331
     },
