@@ -84,6 +84,47 @@
             color: #888;
             font-size: 0.9em;
         }
+        .col-id { width: 60px; }
+        .col-date { width: 120px; }
+        .col-badge { width: 100px; text-align: center; }
+        .col-crawled { width: 150px; }
+        .text-center { text-align: center; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 16px; border-radius: 8px; }
+            h1 { font-size: 1.5em; }
+            table, thead, tbody, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr {
+                background: #fff;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                padding: 12px 14px;
+            }
+            tr:hover { background: #fff; }
+            td {
+                display: block;
+                padding: 3px 0;
+                border: none;
+                text-align: left;
+            }
+            .text-center { text-align: left; }
+            td[data-label]::before {
+                content: attr(data-label);
+                display: inline-block;
+                min-width: 70px;
+                color: #999;
+                font-size: 0.75em;
+                font-weight: 600;
+            }
+            td.cell-name {
+                font-size: 1.05em;
+                font-weight: 600;
+                margin-bottom: 6px;
+            }
+        }
     </style>
     
     <!-- Google tag (gtag.js) -->
@@ -112,1237 +153,1237 @@
         <table>
             <thead>
                 <tr>
-                    <th style="width: 60px;">ID</th>
+                    <th class="col-id">ID</th>
                     <th>比賽名稱</th>
-                    <th style="width: 120px;">日期</th>
-                    <th style="width: 100px; text-align: center;">牌組數</th>
-                    <th style="width: 150px;">爬取時間</th>
+                    <th class="col-date">日期</th>
+                    <th class="col-badge">牌組數</th>
+                    <th class="col-crawled">爬取時間</th>
                 </tr>
             </thead>
             <tbody>
                 
                 <tr>
-                    <td>1075</td>
-                    <td>
+                    <td data-label="ID">1075</td>
+                    <td class="cell-name">
                         <a href="tournament/1075.html">岩手県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 16:56</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 16:56</td>
                 </tr>
                 
                 <tr>
-                    <td>1076</td>
-                    <td>
+                    <td data-label="ID">1076</td>
+                    <td class="cell-name">
                         <a href="tournament/1076.html">福島県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 16:57</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 16:57</td>
                 </tr>
                 
                 <tr>
-                    <td>1077</td>
-                    <td>
+                    <td data-label="ID">1077</td>
+                    <td class="cell-name">
                         <a href="tournament/1077.html">千葉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 16:58</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 16:58</td>
                 </tr>
                 
                 <tr>
-                    <td>1078</td>
-                    <td>
+                    <td data-label="ID">1078</td>
+                    <td class="cell-name">
                         <a href="tournament/1078.html">千葉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 16:59</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 16:59</td>
                 </tr>
                 
                 <tr>
-                    <td>1079</td>
-                    <td>
+                    <td data-label="ID">1079</td>
+                    <td class="cell-name">
                         <a href="tournament/1079.html">宮城県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:00</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:00</td>
                 </tr>
                 
                 <tr>
-                    <td>1080</td>
-                    <td>
+                    <td data-label="ID">1080</td>
+                    <td class="cell-name">
                         <a href="tournament/1080.html">北海道 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:01</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:01</td>
                 </tr>
                 
                 <tr>
-                    <td>1081</td>
-                    <td>
+                    <td data-label="ID">1081</td>
+                    <td class="cell-name">
                         <a href="tournament/1081.html">福井県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:02</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:02</td>
                 </tr>
                 
                 <tr>
-                    <td>1082</td>
-                    <td>
+                    <td data-label="ID">1082</td>
+                    <td class="cell-name">
                         <a href="tournament/1082.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:03</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:03</td>
                 </tr>
                 
                 <tr>
-                    <td>1083</td>
-                    <td>
+                    <td data-label="ID">1083</td>
+                    <td class="cell-name">
                         <a href="tournament/1083.html">熊本県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:04</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:04</td>
                 </tr>
                 
                 <tr>
-                    <td>1084</td>
-                    <td>
+                    <td data-label="ID">1084</td>
+                    <td class="cell-name">
                         <a href="tournament/1084.html">沖縄県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:05</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:05</td>
                 </tr>
                 
                 <tr>
-                    <td>1085</td>
-                    <td>
+                    <td data-label="ID">1085</td>
+                    <td class="cell-name">
                         <a href="tournament/1085.html">滋賀県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:06</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:06</td>
                 </tr>
                 
                 <tr>
-                    <td>1086</td>
-                    <td>
+                    <td data-label="ID">1086</td>
+                    <td class="cell-name">
                         <a href="tournament/1086.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:07</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:07</td>
                 </tr>
                 
                 <tr>
-                    <td>1087</td>
-                    <td>
+                    <td data-label="ID">1087</td>
+                    <td class="cell-name">
                         <a href="tournament/1087.html">京都府 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:08</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:08</td>
                 </tr>
                 
                 <tr>
-                    <td>1088</td>
-                    <td>
+                    <td data-label="ID">1088</td>
+                    <td class="cell-name">
                         <a href="tournament/1088.html">徳島県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:09</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:09</td>
                 </tr>
                 
                 <tr>
-                    <td>1089</td>
-                    <td>
+                    <td data-label="ID">1089</td>
+                    <td class="cell-name">
                         <a href="tournament/1089.html">愛知県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:10</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:10</td>
                 </tr>
                 
                 <tr>
-                    <td>1090</td>
-                    <td>
+                    <td data-label="ID">1090</td>
+                    <td class="cell-name">
                         <a href="tournament/1090.html">愛知県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:11</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:11</td>
                 </tr>
                 
                 <tr>
-                    <td>1091</td>
-                    <td>
+                    <td data-label="ID">1091</td>
+                    <td class="cell-name">
                         <a href="tournament/1091.html">岡山県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:12</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:12</td>
                 </tr>
                 
                 <tr>
-                    <td>1092</td>
-                    <td>
+                    <td data-label="ID">1092</td>
+                    <td class="cell-name">
                         <a href="tournament/1092.html">大阪府 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:13</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:13</td>
                 </tr>
                 
                 <tr>
-                    <td>1093</td>
-                    <td>
+                    <td data-label="ID">1093</td>
+                    <td class="cell-name">
                         <a href="tournament/1093.html">埼玉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:14</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:14</td>
                 </tr>
                 
                 <tr>
-                    <td>1094</td>
-                    <td>
+                    <td data-label="ID">1094</td>
+                    <td class="cell-name">
                         <a href="tournament/1094.html">広島県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:15</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:15</td>
                 </tr>
                 
                 <tr>
-                    <td>1095</td>
-                    <td>
+                    <td data-label="ID">1095</td>
+                    <td class="cell-name">
                         <a href="tournament/1095.html">宮城県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:16</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:16</td>
                 </tr>
                 
                 <tr>
-                    <td>1096</td>
-                    <td>
+                    <td data-label="ID">1096</td>
+                    <td class="cell-name">
                         <a href="tournament/1096.html">千葉県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:17</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:17</td>
                 </tr>
                 
                 <tr>
-                    <td>1097</td>
-                    <td>
+                    <td data-label="ID">1097</td>
+                    <td class="cell-name">
                         <a href="tournament/1097.html">北海道 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:18</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:18</td>
                 </tr>
                 
                 <tr>
-                    <td>1098</td>
-                    <td>
+                    <td data-label="ID">1098</td>
+                    <td class="cell-name">
                         <a href="tournament/1098.html">東京都 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:19</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:19</td>
                 </tr>
                 
                 <tr>
-                    <td>1099</td>
-                    <td>
+                    <td data-label="ID">1099</td>
+                    <td class="cell-name">
                         <a href="tournament/1099.html">香川県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:19</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:19</td>
                 </tr>
                 
                 <tr>
-                    <td>1100</td>
-                    <td>
+                    <td data-label="ID">1100</td>
+                    <td class="cell-name">
                         <a href="tournament/1100.html">大阪府 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:20</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:20</td>
                 </tr>
                 
                 <tr>
-                    <td>1101</td>
-                    <td>
+                    <td data-label="ID">1101</td>
+                    <td class="cell-name">
                         <a href="tournament/1101.html">沖縄県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:21</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:21</td>
                 </tr>
                 
                 <tr>
-                    <td>1102</td>
-                    <td>
+                    <td data-label="ID">1102</td>
+                    <td class="cell-name">
                         <a href="tournament/1102.html">福岡県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:21</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:21</td>
                 </tr>
                 
                 <tr>
-                    <td>1103</td>
-                    <td>
+                    <td data-label="ID">1103</td>
+                    <td class="cell-name">
                         <a href="tournament/1103.html">石川県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:22</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:22</td>
                 </tr>
                 
                 <tr>
-                    <td>1104</td>
-                    <td>
+                    <td data-label="ID">1104</td>
+                    <td class="cell-name">
                         <a href="tournament/1104.html">愛知県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:23</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:23</td>
                 </tr>
                 
                 <tr>
-                    <td>1105</td>
-                    <td>
+                    <td data-label="ID">1105</td>
+                    <td class="cell-name">
                         <a href="tournament/1105.html">広島県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:24</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:24</td>
                 </tr>
                 
                 <tr>
-                    <td>1106</td>
-                    <td>
+                    <td data-label="ID">1106</td>
+                    <td class="cell-name">
                         <a href="tournament/1106.html">福岡県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:24</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:24</td>
                 </tr>
                 
                 <tr>
-                    <td>1107</td>
-                    <td>
+                    <td data-label="ID">1107</td>
+                    <td class="cell-name">
                         <a href="tournament/1107.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:25</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:25</td>
                 </tr>
                 
                 <tr>
-                    <td>1108</td>
-                    <td>
+                    <td data-label="ID">1108</td>
+                    <td class="cell-name">
                         <a href="tournament/1108.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:26</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:26</td>
                 </tr>
                 
                 <tr>
-                    <td>1109</td>
-                    <td>
+                    <td data-label="ID">1109</td>
+                    <td class="cell-name">
                         <a href="tournament/1109.html">宮崎県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:27</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:27</td>
                 </tr>
                 
                 <tr>
-                    <td>1110</td>
-                    <td>
+                    <td data-label="ID">1110</td>
+                    <td class="cell-name">
                         <a href="tournament/1110.html">千葉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:28</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:28</td>
                 </tr>
                 
                 <tr>
-                    <td>1111</td>
-                    <td>
+                    <td data-label="ID">1111</td>
+                    <td class="cell-name">
                         <a href="tournament/1111.html">神奈川県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:29</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:29</td>
                 </tr>
                 
                 <tr>
-                    <td>1112</td>
-                    <td>
+                    <td data-label="ID">1112</td>
+                    <td class="cell-name">
                         <a href="tournament/1112.html">北海道 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:30</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:30</td>
                 </tr>
                 
                 <tr>
-                    <td>1113</td>
-                    <td>
+                    <td data-label="ID">1113</td>
+                    <td class="cell-name">
                         <a href="tournament/1113.html">長野県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:31</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:31</td>
                 </tr>
                 
                 <tr>
-                    <td>1114</td>
-                    <td>
+                    <td data-label="ID">1114</td>
+                    <td class="cell-name">
                         <a href="tournament/1114.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:32</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:32</td>
                 </tr>
                 
                 <tr>
-                    <td>1115</td>
-                    <td>
+                    <td data-label="ID">1115</td>
+                    <td class="cell-name">
                         <a href="tournament/1115.html">広島県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:33</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:33</td>
                 </tr>
                 
                 <tr>
-                    <td>1116</td>
-                    <td>
+                    <td data-label="ID">1116</td>
+                    <td class="cell-name">
                         <a href="tournament/1116.html">静岡県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:34</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:34</td>
                 </tr>
                 
                 <tr>
-                    <td>1117</td>
-                    <td>
+                    <td data-label="ID">1117</td>
+                    <td class="cell-name">
                         <a href="tournament/1117.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:35</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:35</td>
                 </tr>
                 
                 <tr>
-                    <td>1118</td>
-                    <td>
+                    <td data-label="ID">1118</td>
+                    <td class="cell-name">
                         <a href="tournament/1118.html">東京都 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 17:36</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:36</td>
                 </tr>
                 
                 <tr>
-                    <td>1119</td>
-                    <td>
+                    <td data-label="ID">1119</td>
+                    <td class="cell-name">
                         <a href="tournament/1119.html">兵庫県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:36</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:36</td>
                 </tr>
                 
                 <tr>
-                    <td>1120</td>
-                    <td>
+                    <td data-label="ID">1120</td>
+                    <td class="cell-name">
                         <a href="tournament/1120.html">東京都 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:37</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:37</td>
                 </tr>
                 
                 <tr>
-                    <td>1121</td>
-                    <td>
+                    <td data-label="ID">1121</td>
+                    <td class="cell-name">
                         <a href="tournament/1121.html">東京都 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:38</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:38</td>
                 </tr>
                 
                 <tr>
-                    <td>1122</td>
-                    <td>
+                    <td data-label="ID">1122</td>
+                    <td class="cell-name">
                         <a href="tournament/1122.html">東京都 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:39</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:39</td>
                 </tr>
                 
                 <tr>
-                    <td>1123</td>
-                    <td>
+                    <td data-label="ID">1123</td>
+                    <td class="cell-name">
                         <a href="tournament/1123.html">栃木県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:40</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:40</td>
                 </tr>
                 
                 <tr>
-                    <td>1124</td>
-                    <td>
+                    <td data-label="ID">1124</td>
+                    <td class="cell-name">
                         <a href="tournament/1124.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:41</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:41</td>
                 </tr>
                 
                 <tr>
-                    <td>1125</td>
-                    <td>
+                    <td data-label="ID">1125</td>
+                    <td class="cell-name">
                         <a href="tournament/1125.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:42</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:42</td>
                 </tr>
                 
                 <tr>
-                    <td>1126</td>
-                    <td>
+                    <td data-label="ID">1126</td>
+                    <td class="cell-name">
                         <a href="tournament/1126.html">東京都 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:44</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:44</td>
                 </tr>
                 
                 <tr>
-                    <td>1127</td>
-                    <td>
+                    <td data-label="ID">1127</td>
+                    <td class="cell-name">
                         <a href="tournament/1127.html">茨城県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-04</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-04</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 17:46</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 17:46</td>
                 </tr>
                 
                 <tr>
-                    <td>1029</td>
-                    <td>
+                    <td data-label="ID">1029</td>
+                    <td class="cell-name">
                         <a href="tournament/1029.html">愛知県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:50</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:50</td>
                 </tr>
                 
                 <tr>
-                    <td>1030</td>
-                    <td>
+                    <td data-label="ID">1030</td>
+                    <td class="cell-name">
                         <a href="tournament/1030.html">北海道 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:51</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:51</td>
                 </tr>
                 
                 <tr>
-                    <td>1031</td>
-                    <td>
+                    <td data-label="ID">1031</td>
+                    <td class="cell-name">
                         <a href="tournament/1031.html">群馬県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:52</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:52</td>
                 </tr>
                 
                 <tr>
-                    <td>1032</td>
-                    <td>
+                    <td data-label="ID">1032</td>
+                    <td class="cell-name">
                         <a href="tournament/1032.html">茨城県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:53</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:53</td>
                 </tr>
                 
                 <tr>
-                    <td>1033</td>
-                    <td>
+                    <td data-label="ID">1033</td>
+                    <td class="cell-name">
                         <a href="tournament/1033.html">岐阜県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:54</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:54</td>
                 </tr>
                 
                 <tr>
-                    <td>1034</td>
-                    <td>
+                    <td data-label="ID">1034</td>
+                    <td class="cell-name">
                         <a href="tournament/1034.html">静岡県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:55</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:55</td>
                 </tr>
                 
                 <tr>
-                    <td>1035</td>
-                    <td>
+                    <td data-label="ID">1035</td>
+                    <td class="cell-name">
                         <a href="tournament/1035.html">大阪府 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:56</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:56</td>
                 </tr>
                 
                 <tr>
-                    <td>1036</td>
-                    <td>
+                    <td data-label="ID">1036</td>
+                    <td class="cell-name">
                         <a href="tournament/1036.html">福岡県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:57</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:57</td>
                 </tr>
                 
                 <tr>
-                    <td>1037</td>
-                    <td>
+                    <td data-label="ID">1037</td>
+                    <td class="cell-name">
                         <a href="tournament/1037.html">大阪府 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:58</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:58</td>
                 </tr>
                 
                 <tr>
-                    <td>1038</td>
-                    <td>
+                    <td data-label="ID">1038</td>
+                    <td class="cell-name">
                         <a href="tournament/1038.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:59</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:59</td>
                 </tr>
                 
                 <tr>
-                    <td>1039</td>
-                    <td>
+                    <td data-label="ID">1039</td>
+                    <td class="cell-name">
                         <a href="tournament/1039.html">大阪府 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:00</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:00</td>
                 </tr>
                 
                 <tr>
-                    <td>1040</td>
-                    <td>
+                    <td data-label="ID">1040</td>
+                    <td class="cell-name">
                         <a href="tournament/1040.html">佐賀県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:01</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:01</td>
                 </tr>
                 
                 <tr>
-                    <td>1041</td>
-                    <td>
+                    <td data-label="ID">1041</td>
+                    <td class="cell-name">
                         <a href="tournament/1041.html">香川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:02</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:02</td>
                 </tr>
                 
                 <tr>
-                    <td>1042</td>
-                    <td>
+                    <td data-label="ID">1042</td>
+                    <td class="cell-name">
                         <a href="tournament/1042.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:04</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:04</td>
                 </tr>
                 
                 <tr>
-                    <td>1043</td>
-                    <td>
+                    <td data-label="ID">1043</td>
+                    <td class="cell-name">
                         <a href="tournament/1043.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:05</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:05</td>
                 </tr>
                 
                 <tr>
-                    <td>1044</td>
-                    <td>
+                    <td data-label="ID">1044</td>
+                    <td class="cell-name">
                         <a href="tournament/1044.html">広島県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:45</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:45</td>
                 </tr>
                 
                 <tr>
-                    <td>1045</td>
-                    <td>
+                    <td data-label="ID">1045</td>
+                    <td class="cell-name">
                         <a href="tournament/1045.html">東京都 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:47</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:47</td>
                 </tr>
                 
                 <tr>
-                    <td>1046</td>
-                    <td>
+                    <td data-label="ID">1046</td>
+                    <td class="cell-name">
                         <a href="tournament/1046.html">東京都 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:47</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:47</td>
                 </tr>
                 
                 <tr>
-                    <td>1047</td>
-                    <td>
+                    <td data-label="ID">1047</td>
+                    <td class="cell-name">
                         <a href="tournament/1047.html">埼玉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:49</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:49</td>
                 </tr>
                 
                 <tr>
-                    <td>1048</td>
-                    <td>
+                    <td data-label="ID">1048</td>
+                    <td class="cell-name">
                         <a href="tournament/1048.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:50</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:50</td>
                 </tr>
                 
                 <tr>
-                    <td>1049</td>
-                    <td>
+                    <td data-label="ID">1049</td>
+                    <td class="cell-name">
                         <a href="tournament/1049.html">愛知県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:51</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:51</td>
                 </tr>
                 
                 <tr>
-                    <td>1050</td>
-                    <td>
+                    <td data-label="ID">1050</td>
+                    <td class="cell-name">
                         <a href="tournament/1050.html">広島県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:52</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:52</td>
                 </tr>
                 
                 <tr>
-                    <td>1051</td>
-                    <td>
+                    <td data-label="ID">1051</td>
+                    <td class="cell-name">
                         <a href="tournament/1051.html">宮城県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:53</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:53</td>
                 </tr>
                 
                 <tr>
-                    <td>1052</td>
-                    <td>
+                    <td data-label="ID">1052</td>
+                    <td class="cell-name">
                         <a href="tournament/1052.html">千葉県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:54</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:54</td>
                 </tr>
                 
                 <tr>
-                    <td>1053</td>
-                    <td>
+                    <td data-label="ID">1053</td>
+                    <td class="cell-name">
                         <a href="tournament/1053.html">香川県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:55</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:55</td>
                 </tr>
                 
                 <tr>
-                    <td>1054</td>
-                    <td>
+                    <td data-label="ID">1054</td>
+                    <td class="cell-name">
                         <a href="tournament/1054.html">東京都 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:56</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:56</td>
                 </tr>
                 
                 <tr>
-                    <td>1055</td>
-                    <td>
+                    <td data-label="ID">1055</td>
+                    <td class="cell-name">
                         <a href="tournament/1055.html">北海道 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:57</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:57</td>
                 </tr>
                 
                 <tr>
-                    <td>1056</td>
-                    <td>
+                    <td data-label="ID">1056</td>
+                    <td class="cell-name">
                         <a href="tournament/1056.html">大阪府 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:58</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:58</td>
                 </tr>
                 
                 <tr>
-                    <td>1057</td>
-                    <td>
+                    <td data-label="ID">1057</td>
+                    <td class="cell-name">
                         <a href="tournament/1057.html">沖縄県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 13:59</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:59</td>
                 </tr>
                 
                 <tr>
-                    <td>1058</td>
-                    <td>
+                    <td data-label="ID">1058</td>
+                    <td class="cell-name">
                         <a href="tournament/1058.html">福岡県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 13:59</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 13:59</td>
                 </tr>
                 
                 <tr>
-                    <td>1059</td>
-                    <td>
+                    <td data-label="ID">1059</td>
+                    <td class="cell-name">
                         <a href="tournament/1059.html">石川県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">4</span>
                     </td>
-                    <td class="date">2026-10-04 14:00</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:00</td>
                 </tr>
                 
                 <tr>
-                    <td>1060</td>
-                    <td>
+                    <td data-label="ID">1060</td>
+                    <td class="cell-name">
                         <a href="tournament/1060.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:21</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:21</td>
                 </tr>
                 
                 <tr>
-                    <td>1061</td>
-                    <td>
+                    <td data-label="ID">1061</td>
+                    <td class="cell-name">
                         <a href="tournament/1061.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:22</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:22</td>
                 </tr>
                 
                 <tr>
-                    <td>1062</td>
-                    <td>
+                    <td data-label="ID">1062</td>
+                    <td class="cell-name">
                         <a href="tournament/1062.html">神奈川県 2027年第1賽季城市聯賽（青年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:23</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:23</td>
                 </tr>
                 
                 <tr>
-                    <td>1063</td>
-                    <td>
+                    <td data-label="ID">1063</td>
+                    <td class="cell-name">
                         <a href="tournament/1063.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:24</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:24</td>
                 </tr>
                 
                 <tr>
-                    <td>1064</td>
-                    <td>
+                    <td data-label="ID">1064</td>
+                    <td class="cell-name">
                         <a href="tournament/1064.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:25</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:25</td>
                 </tr>
                 
                 <tr>
-                    <td>1065</td>
-                    <td>
+                    <td data-label="ID">1065</td>
+                    <td class="cell-name">
                         <a href="tournament/1065.html">神奈川県 2027年第1賽季城市聯賽（少年組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:27</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:27</td>
                 </tr>
                 
                 <tr>
-                    <td>1066</td>
-                    <td>
+                    <td data-label="ID">1066</td>
+                    <td class="cell-name">
                         <a href="tournament/1066.html">栃木県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:28</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:28</td>
                 </tr>
                 
                 <tr>
-                    <td>1067</td>
-                    <td>
+                    <td data-label="ID">1067</td>
+                    <td class="cell-name">
                         <a href="tournament/1067.html">埼玉県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:29</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:29</td>
                 </tr>
                 
                 <tr>
-                    <td>1068</td>
-                    <td>
+                    <td data-label="ID">1068</td>
+                    <td class="cell-name">
                         <a href="tournament/1068.html">茨城県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:30</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:30</td>
                 </tr>
                 
                 <tr>
-                    <td>1069</td>
-                    <td>
+                    <td data-label="ID">1069</td>
+                    <td class="cell-name">
                         <a href="tournament/1069.html">岩手県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:31</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:31</td>
                 </tr>
                 
                 <tr>
-                    <td>1070</td>
-                    <td>
+                    <td data-label="ID">1070</td>
+                    <td class="cell-name">
                         <a href="tournament/1070.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:32</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:32</td>
                 </tr>
                 
                 <tr>
-                    <td>1071</td>
-                    <td>
+                    <td data-label="ID">1071</td>
+                    <td class="cell-name">
                         <a href="tournament/1071.html">山梨県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">6</span>
                     </td>
-                    <td class="date">2026-10-04 14:33</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:33</td>
                 </tr>
                 
                 <tr>
-                    <td>1072</td>
-                    <td>
+                    <td data-label="ID">1072</td>
+                    <td class="cell-name">
                         <a href="tournament/1072.html">神奈川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:34</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:34</td>
                 </tr>
                 
                 <tr>
-                    <td>1073</td>
-                    <td>
+                    <td data-label="ID">1073</td>
+                    <td class="cell-name">
                         <a href="tournament/1073.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:35</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:35</td>
                 </tr>
                 
                 <tr>
-                    <td>1074</td>
-                    <td>
+                    <td data-label="ID">1074</td>
+                    <td class="cell-name">
                         <a href="tournament/1074.html">香川県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-03</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-03</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 14:36</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 14:36</td>
                 </tr>
                 
                 <tr>
-                    <td>1018</td>
-                    <td>
+                    <td data-label="ID">1018</td>
+                    <td class="cell-name">
                         <a href="tournament/1018.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-02</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-02</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:29</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:29</td>
                 </tr>
                 
                 <tr>
-                    <td>1019</td>
-                    <td>
+                    <td data-label="ID">1019</td>
+                    <td class="cell-name">
                         <a href="tournament/1019.html">滋賀県 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-02</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-02</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:30</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:30</td>
                 </tr>
                 
                 <tr>
-                    <td>1020</td>
-                    <td>
+                    <td data-label="ID">1020</td>
+                    <td class="cell-name">
                         <a href="tournament/1020.html">東京都 2027年第1賽季城市聯賽（公開組）</a>
                     </td>
-                    <td class="date">2026-10-02</td>
-                    <td style="text-align: center;">
+                    <td class="date" data-label="日期">2026-10-02</td>
+                    <td class="text-center" data-label="牌組數">
                         <span class="badge">8</span>
                     </td>
-                    <td class="date">2026-10-04 12:31</td>
+                    <td class="date" data-label="爬取時間">2026-10-04 12:31</td>
                 </tr>
                 
             </tbody>

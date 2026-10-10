@@ -71,6 +71,41 @@
         .back-btn:hover {
             background: #764ba2;
         }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 16px; border-radius: 8px; }
+            h1 { font-size: 1.5em; }
+            table, thead, tbody, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr {
+                background: #fff;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                padding: 12px 14px;
+            }
+            tr:hover { background: #fff; }
+            td {
+                display: block;
+                padding: 3px 0;
+                border: none;
+                text-align: left;
+            }
+            td[data-label]::before {
+                content: attr(data-label);
+                display: inline-block;
+                min-width: 70px;
+                color: #999;
+                font-size: 0.75em;
+                font-weight: 600;
+            }
+            td.cell-name {
+                font-size: 1.05em;
+                font-weight: 600;
+                margin-bottom: 6px;
+            }
+        }
     </style>
     
     <!-- Google tag (gtag.js) -->
@@ -100,129 +135,129 @@
             <tbody>
                 
         <tr>
-            <td><a href="20261009-20261011/index.html">2026-10-09 ~ 2026-10-11</a></td>
-            <td>27</td>
-            <td>412</td>
-            <td class="date">2026-10-10 22:16</td>
+            <td class="cell-name"><a href="20261009-20261011/index.html">2026-10-09 ~ 2026-10-11</a></td>
+            <td data-label="比賽數">27</td>
+            <td data-label="牌組數">412</td>
+            <td class="date" data-label="生成時間">2026-10-10 23:20</td>
         </tr>
         
         <tr>
-            <td><a href="20261002-20261004/index.html">2026-10-02 ~ 2026-10-04</a></td>
-            <td>102</td>
-            <td>758</td>
-            <td class="date">2026-10-10 20:12</td>
+            <td class="cell-name"><a href="20261002-20261004/index.html">2026-10-02 ~ 2026-10-04</a></td>
+            <td data-label="比賽數">102</td>
+            <td data-label="牌組數">758</td>
+            <td class="date" data-label="生成時間">2026-10-10 23:20</td>
         </tr>
         
         <tr>
-            <td><a href="20260925-20260927/index.html">2026-09-25 ~ 2026-09-27</a></td>
-            <td>42</td>
-            <td>331</td>
-            <td class="date">2026-10-10 17:33</td>
+            <td class="cell-name"><a href="20260925-20260927/index.html">2026-09-25 ~ 2026-09-27</a></td>
+            <td data-label="比賽數">42</td>
+            <td data-label="牌組數">331</td>
+            <td class="date" data-label="生成時間">2026-10-10 23:19</td>
         </tr>
         
         <tr>
-            <td><a href="20260508-20260510/index.html">2026-05-08 ~ 2026-05-10</a></td>
-            <td>6</td>
-            <td>48</td>
-            <td class="date">2026-05-13 18:07</td>
+            <td class="cell-name"><a href="20260508-20260510/index.html">2026-05-08 ~ 2026-05-10</a></td>
+            <td data-label="比賽數">6</td>
+            <td data-label="牌組數">48</td>
+            <td class="date" data-label="生成時間">2026-05-13 18:07</td>
         </tr>
         
         <tr>
-            <td><a href="20260403-20260405/index.html">2026-04-03 ~ 2026-04-05</a></td>
-            <td>72</td>
-            <td>576</td>
-            <td class="date">2026-04-06 22:38</td>
+            <td class="cell-name"><a href="20260403-20260405/index.html">2026-04-03 ~ 2026-04-05</a></td>
+            <td data-label="比賽數">72</td>
+            <td data-label="牌組數">576</td>
+            <td class="date" data-label="生成時間">2026-04-06 22:38</td>
         </tr>
         
         <tr>
-            <td><a href="20260327-20260329/index.html">2026-03-27 ~ 2026-03-29</a></td>
-            <td>5</td>
-            <td>40</td>
-            <td class="date">2026-04-06 13:04</td>
+            <td class="cell-name"><a href="20260327-20260329/index.html">2026-03-27 ~ 2026-03-29</a></td>
+            <td data-label="比賽數">5</td>
+            <td data-label="牌組數">40</td>
+            <td class="date" data-label="生成時間">2026-04-06 13:04</td>
         </tr>
         
         <tr>
-            <td><a href="20260310-20260406/index.html">2026-03-10 ~ 2026-04-06</a></td>
-            <td>243</td>
-            <td>1916</td>
-            <td class="date">2026-04-06 13:03</td>
+            <td class="cell-name"><a href="20260310-20260406/index.html">2026-03-10 ~ 2026-04-06</a></td>
+            <td data-label="比賽數">243</td>
+            <td data-label="牌組數">1916</td>
+            <td class="date" data-label="生成時間">2026-04-06 13:03</td>
         </tr>
         
         <tr>
-            <td><a href="20260320-20260322/index.html">2026-03-20 ~ 2026-03-22</a></td>
-            <td>82</td>
-            <td>636</td>
-            <td class="date">2026-03-23 01:35</td>
+            <td class="cell-name"><a href="20260320-20260322/index.html">2026-03-20 ~ 2026-03-22</a></td>
+            <td data-label="比賽數">82</td>
+            <td data-label="牌組數">636</td>
+            <td class="date" data-label="生成時間">2026-03-23 01:35</td>
         </tr>
         
         <tr>
-            <td><a href="20260314-20260315/index.html">2026-03-14 ~ 2026-03-15</a></td>
-            <td>48</td>
-            <td>380</td>
-            <td class="date">2026-03-16 00:46</td>
+            <td class="cell-name"><a href="20260314-20260315/index.html">2026-03-14 ~ 2026-03-15</a></td>
+            <td data-label="比賽數">48</td>
+            <td data-label="牌組數">380</td>
+            <td class="date" data-label="生成時間">2026-03-16 00:46</td>
         </tr>
         
         <tr>
-            <td><a href="20260307-20260308/index.html">2026-03-07 ~ 2026-03-08</a></td>
-            <td>74</td>
-            <td>591</td>
-            <td class="date">2026-03-09 01:15</td>
+            <td class="cell-name"><a href="20260307-20260308/index.html">2026-03-07 ~ 2026-03-08</a></td>
+            <td data-label="比賽數">74</td>
+            <td data-label="牌組數">591</td>
+            <td class="date" data-label="生成時間">2026-03-09 01:15</td>
         </tr>
         
         <tr>
-            <td><a href="20260228-20260301/index.html">2026-02-28 ~ 2026-03-01</a></td>
-            <td>28</td>
-            <td>223</td>
-            <td class="date">2026-03-01 21:09</td>
+            <td class="cell-name"><a href="20260228-20260301/index.html">2026-02-28 ~ 2026-03-01</a></td>
+            <td data-label="比賽數">28</td>
+            <td data-label="牌組數">223</td>
+            <td class="date" data-label="生成時間">2026-03-01 21:09</td>
         </tr>
         
         <tr>
-            <td><a href="20260228/index.html">2026-02-28</a></td>
-            <td>8</td>
-            <td>63</td>
-            <td class="date">2026-02-28 22:36</td>
+            <td class="cell-name"><a href="20260228/index.html">2026-02-28</a></td>
+            <td data-label="比賽數">8</td>
+            <td data-label="牌組數">63</td>
+            <td class="date" data-label="生成時間">2026-02-28 22:36</td>
         </tr>
         
         <tr>
-            <td><a href="20260221-20260222/index.html">2026-02-21 ~ 2026-02-22</a></td>
-            <td>3</td>
-            <td>24</td>
-            <td class="date">2026-02-23 00:33</td>
+            <td class="cell-name"><a href="20260221-20260222/index.html">2026-02-21 ~ 2026-02-22</a></td>
+            <td data-label="比賽數">3</td>
+            <td data-label="牌組數">24</td>
+            <td class="date" data-label="生成時間">2026-02-23 00:33</td>
         </tr>
         
         <tr>
-            <td><a href="20260214-20260215/index.html">2026-02-14 ~ 2026-02-15</a></td>
-            <td>81</td>
-            <td>594</td>
-            <td class="date">2026-02-15 22:20</td>
+            <td class="cell-name"><a href="20260214-20260215/index.html">2026-02-14 ~ 2026-02-15</a></td>
+            <td data-label="比賽數">81</td>
+            <td data-label="牌組數">594</td>
+            <td class="date" data-label="生成時間">2026-02-15 22:20</td>
         </tr>
         
         <tr>
-            <td><a href="20260214/index.html">2026-02-14</a></td>
-            <td>36</td>
-            <td>263</td>
-            <td class="date">2026-02-14 23:28</td>
+            <td class="cell-name"><a href="20260214/index.html">2026-02-14</a></td>
+            <td data-label="比賽數">36</td>
+            <td data-label="牌組數">263</td>
+            <td class="date" data-label="生成時間">2026-02-14 23:28</td>
         </tr>
         
         <tr>
-            <td><a href="20260207-20260208/index.html">2026-02-07 ~ 2026-02-08</a></td>
-            <td>56</td>
-            <td>441</td>
-            <td class="date">2026-02-08 21:56</td>
+            <td class="cell-name"><a href="20260207-20260208/index.html">2026-02-07 ~ 2026-02-08</a></td>
+            <td data-label="比賽數">56</td>
+            <td data-label="牌組數">441</td>
+            <td class="date" data-label="生成時間">2026-02-08 21:56</td>
         </tr>
         
         <tr>
-            <td><a href="20260207/index.html">2026-02-07</a></td>
-            <td>30</td>
-            <td>235</td>
-            <td class="date">2026-02-08 00:37</td>
+            <td class="cell-name"><a href="20260207/index.html">2026-02-07</a></td>
+            <td data-label="比賽數">30</td>
+            <td data-label="牌組數">235</td>
+            <td class="date" data-label="生成時間">2026-02-08 00:37</td>
         </tr>
         
         <tr>
-            <td><a href="20260131-20260201/index.html">2026-01-31 ~ 2026-02-01</a></td>
-            <td>93</td>
-            <td>680</td>
-            <td class="date">2026-02-07 22:20</td>
+            <td class="cell-name"><a href="20260131-20260201/index.html">2026-01-31 ~ 2026-02-01</a></td>
+            <td data-label="比賽數">93</td>
+            <td data-label="牌組數">680</td>
+            <td class="date" data-label="生成時間">2026-02-07 22:20</td>
         </tr>
         
             </tbody>

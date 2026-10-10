@@ -113,6 +113,49 @@
         .back-btn:hover {
             background: #764ba2;
         }
+        .col-rank { width: 80px; }
+        .col-archetype { width: 250px; }
+        .col-action { width: 120px; text-align: center; }
+        .text-center { text-align: center; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 16px; border-radius: 8px; }
+            h1 { font-size: 1.4em; }
+            .info { padding: 12px; font-size: 0.9em; }
+            table, thead, tbody, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr {
+                background: #fff;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                padding: 12px 14px;
+            }
+            tr:hover { background: #fff; }
+            td {
+                display: block;
+                padding: 3px 0;
+                border: none;
+                text-align: left;
+            }
+            .text-center { text-align: left; }
+            td[data-label]::before {
+                content: attr(data-label);
+                display: inline-block;
+                min-width: 70px;
+                color: #999;
+                font-size: 0.75em;
+                font-weight: 600;
+            }
+            td.cell-name { margin-bottom: 4px; }
+            td.cell-sub {
+                font-size: 0.95em;
+                color: #555;
+                margin-bottom: 6px;
+            }
+            td.cell-archetype { margin-bottom: 6px; }
+        }
     </style>
     
     <!-- Google tag (gtag.js) -->
@@ -143,22 +186,22 @@
         <table>
             <thead>
                 <tr>
-                    <th style="width: 80px;">名次</th>
+                    <th class="col-rank">名次</th>
                     <th>玩家</th>
-                    <th style="width: 250px;">牌組類型</th>
-                    <th style="width: 120px; text-align: center;">操作</th>
+                    <th class="col-archetype">牌組類型</th>
+                    <th class="col-action">操作</th>
                 </tr>
             </thead>
             <tbody>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-1">
                             第 1 名
                         </span>
                     </td>
-                    <td>ふみとし</td>
-                    <td>
+                    <td class="cell-sub">ふみとし</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -175,19 +218,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8797.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-2">
                             第 2 名
                         </span>
                     </td>
-                    <td>そいそーす</td>
-                    <td>
+                    <td class="cell-sub">そいそーす</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -204,19 +247,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8798.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-3">
                             第 3 名
                         </span>
                     </td>
-                    <td>士道</td>
-                    <td>
+                    <td class="cell-sub">士道</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍/index.html" class="archetype-link">
@@ -225,19 +268,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8799.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-3">
                             第 3 名
                         </span>
                     </td>
-                    <td>Eight</td>
-                    <td>
+                    <td class="cell-sub">Eight</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍/index.html" class="archetype-link">
@@ -246,19 +289,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8800.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 5 名
                         </span>
                     </td>
-                    <td>レミ</td>
-                    <td>
+                    <td class="cell-sub">レミ</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/祭典/index.html" class="archetype-link">
@@ -267,19 +310,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8801.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 5 名
                         </span>
                     </td>
-                    <td>ハリボー</td>
-                    <td>
+                    <td class="cell-sub">ハリボー</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/胡地/index.html" class="archetype-link">
@@ -292,19 +335,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8802.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 5 名
                         </span>
                     </td>
-                    <td>だんちょー</td>
-                    <td>
+                    <td class="cell-sub">だんちょー</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -321,19 +364,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8803.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 5 名
                         </span>
                     </td>
-                    <td>キャノン</td>
-                    <td>
+                    <td class="cell-sub">キャノン</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/超級大竺葵/index.html" class="archetype-link">
@@ -346,19 +389,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8804.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>フジッリ</td>
-                    <td>
+                    <td class="cell-sub">フジッリ</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/化隱/index.html" class="archetype-link">
@@ -367,19 +410,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8805.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>ろーにぃ</td>
-                    <td>
+                    <td class="cell-sub">ろーにぃ</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/祭典/index.html" class="archetype-link">
@@ -388,19 +431,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8806.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>さくとら</td>
-                    <td>
+                    <td class="cell-sub">さくとら</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -417,19 +460,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8807.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>ゆう</td>
-                    <td>
+                    <td class="cell-sub">ゆう</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -446,19 +489,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8808.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>パープルん</td>
-                    <td>
+                    <td class="cell-sub">パープルん</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/呆呆王/index.html" class="archetype-link">
@@ -475,19 +518,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8809.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>助っ人外国人 タカティン</td>
-                    <td>
+                    <td class="cell-sub">助っ人外国人 タカティン</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/祭典/index.html" class="archetype-link">
@@ -496,19 +539,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8810.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>コスタリカ</td>
-                    <td>
+                    <td class="cell-sub">コスタリカ</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/呆呆王/index.html" class="archetype-link">
@@ -521,19 +564,19 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8811.html">查看構築 →</a>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>
+                    <td class="cell-name">
                         <span class="rank rank-0">
                             第 9 名
                         </span>
                     </td>
-                    <td>SURTR(すると)</td>
-                    <td>
+                    <td class="cell-sub">SURTR(すると)</td>
+                    <td class="cell-archetype">
                         
                         
                         <a href="../archetype/多龍魔靈/index.html" class="archetype-link">
@@ -550,7 +593,7 @@
                         
                         
                     </td>
-                    <td style="text-align: center;">
+                    <td class="text-center" data-label="操作">
                         <a href="../deck/8812.html">查看構築 →</a>
                     </td>
                 </tr>
